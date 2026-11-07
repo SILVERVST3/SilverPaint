@@ -1,0 +1,19 @@
+{
+  "name": "silverpaint",
+  "version": "1.1.0",
+  "description": "SilverPaint - programa de desenho com suporte a mesa digitalizadora",
+  "main": "main.js",
+  "author": "Jorge Prata Alves Junior",
+  "license": "UNLICENSED",
+  "scripts": { "start": "electron .", "dist": "electron-builder --win portable nsis --publish never" },
+  "devDependencies": { "electron": "^33.2.0", "electron-builder": "^25.1.8" },
+  "build": {
+    "appId": "com.silver.paint",
+    "productName": "SilverPaint",
+    "files": ["main.js", "preload.js", "index.html"],
+    "directories": { "output": "dist" },
+    "win": { "target": ["portable", "nsis"] },
+    "portable": { "artifactName": "SilverPaint-portable-${version}.exe" },
+    "nsis": { "oneClick": false, "allowToChangeInstallationDirectory": true, "artifactName": "SilverPaint-instalador-${version}.exe" }
+  }
+}
